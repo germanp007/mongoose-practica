@@ -12,4 +12,4 @@ server.listen(port, () => console.log(`Servidor en puerto ${port}`));
 
 connectDB();
 
-server.use("/api/user", usersRouter);
+server.use("/api/users", usersRouter);
