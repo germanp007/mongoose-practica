@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
-    let { id } = req.params;
+    let id = req.params.id;
     let userToReplace = req.body;
     if (
       !userToReplace.first_name ||
@@ -39,7 +39,7 @@ router.put("/:id", async (req, res) => {
     )
       return res.json({ status: "error", message: "incomplete values" });
 
-    let result = await usersModel.updateOne({ _id: id, userToReplace });
+    let result = await usersModel.updateOne({ _id: id }, userToReplace);
     res.json({ status: "success", data: result });
   } catch (error) {
     res.json({ status: "error", message: "el usuario no ha sido encontrado" });
