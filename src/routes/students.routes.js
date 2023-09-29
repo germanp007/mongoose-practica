@@ -59,7 +59,7 @@ router.put("/:id", async (req, res) => {
 });
 router.delete("/:dni", async (req, res) => {
   try {
-    const { dni } = req.params;
+    const dni = parseInt(req.params);
     const result = await studentsModel.deleteOne({ dni: dni });
 
     res.json({ status: "success", data: result });
