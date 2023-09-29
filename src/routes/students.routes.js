@@ -32,7 +32,7 @@ router.post("/", async (req, res) => {
       !studentData.curso ||
       !studentData.nota
     ) {
-      return res.json("Debe llenar todos los campons");
+      return res.json({status: 'error', message: 'Debes llenar todos los campos.');
     }
     const studentAdded = await studentsModel.create(studentData);
     res.json({ status: "success", data: studentAdded });
