@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
-    let id = req.params.id;
+    let id = parseInt(req.params.id);
     let userToReplace = req.body;
     if (
       !userToReplace.first_name ||
@@ -48,7 +48,7 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    const { id } = req.params;
+    const  id = req.params.id;
     let deletedUser = await usersModel.deleteOne({ _id: id });
     res.json({ status: "success", message: deletedUser });
   } catch (error) {
