@@ -5,7 +5,7 @@ const router = Router();
 
 router.get("/", async (req, res) => {
   try {
-    const limit = +req.query.limit;
+    const limit = req.query.limit;
 
     if (!isNaN(limit)) {
       const studentsList = await studentsModel.find().limit(limit);
@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
 });
 router.put("/:id", async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = parseInt(req.params.id);
     const studentData = req.body;
 
     const result = await studentsModel.updateOne({ _id: id }, studentData);
