@@ -20,9 +20,10 @@ const studentsSquema = mongoose.Schema({
     required: true,
     unique: true,
   },
-  curso: {
-    type: String,
+  cursos: {
+    type:String,
     required: true,
+    enum: ['fisica','matematicas','quimica', 'biologia']
   },
   nota: {
     type: Number,
