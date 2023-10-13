@@ -9,5 +9,11 @@ const teacherSchema = new mongoose.Schema({
   lastname: {
     type: String,
     required: true
-  }
+  },
+  courses: [
+    {
+      type: string,
+      required: true
+    }
+  ]
 })
