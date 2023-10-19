@@ -15,7 +15,10 @@ const userSchema = new mongoose.Schema({
     unique: true, // Debe ser unico y no repetirse
   },
 
-  role: String,
+  role: {
+    type: String,
+    enum: ['admin', 'user']
+  }
 });
 //el modelo nos sirve para realizar operaciones sobre la coleccion users
 export const usersModel = mongoose.model(usersCollection, userSchema); // primer parametro es el nombre
