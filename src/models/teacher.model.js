@@ -10,6 +10,11 @@ const teacherSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  credentials: {
+    type: Number,
+    required: true,
+    unique: true
+  }
   courses: [
     {
       type: string,
