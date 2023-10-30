@@ -23,7 +23,7 @@ const studentsSquema = mongoose.Schema({
   cursos: {
     type:String,
     required: true,
-    enum: ['fisica','matematicas','quimica', 'biologia']
+    enum: ['fisica','matematicas','quimica', 'biologia', 'historia','geografia']
   },
   nota: {
     type: Number,
